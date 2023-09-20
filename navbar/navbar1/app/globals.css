@@ -37,7 +37,6 @@ nav a::after {
   transition: width 0.3s ease, left 0.3s ease;
 }
 
-/* Alapértelmezett hover és focus stílusok */
 nav a:hover,
 nav a:focus {
   color: #8b0000;
@@ -115,27 +114,86 @@ nav a:focus:not(:hover)::after {
   justify-content: space-around;
 }
 
+@keyframes slideIn {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.menu-active .overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 @media (max-width: 768px) {
-  /* Változtathatod ezt az értéket attól függően, mikor szeretnéd, hogy a hamburger menü megjelenjen */
   .hamburger {
     display: flex;
   }
 
   .menu {
     display: none;
-  }
-
-  .menu.open {
     position: absolute;
     top: 70px;
     right: 10px;
     flex-direction: column;
     align-items: flex-end;
+  }
+
+  .menu .link {
+    display: block;
+    background-color: white;
+    opacity: 0;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    animation: slideIn 0.3s forwards;
+  }
+
+  .menu .home-link {
+    animation-delay: 0.2s;
+  }
+
+  .menu .about-link {
+    animation-delay: 0.4s;
+  }
+
+  .menu .contact-link {
+    animation-delay: 0.6s;
+  }
+  .menu.active .link {
+    animation: slideIn 0.3s forwards;
+  }
+
+  .menu a {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin: 5px;
+  }
+
+  .menu.open {
     display: flex;
   }
-}
 
-@media (max-width: 768px) {
   nav {
     box-shadow: none;
     background-color: transparent;

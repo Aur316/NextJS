@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
 import "../../globals.css";
 
 export default function Navbar() {
@@ -12,23 +11,24 @@ export default function Navbar() {
 
   return (
     <nav>
+      <div className="overlay"></div>
       <div onClick={() => setIsOpen(!isOpen)} className="hamburger">
         ☰
       </div>
       <div className={`menu ${isOpen ? "open" : ""}`}>
-        <Link href="/" className="home-link" onClick={handleLinkClick}>
+        <a href="/" className="link home-link" onClick={handleLinkClick}>
           Home
-        </Link>
-        <Link href="/about" className="about-link" onClick={handleLinkClick}>
+        </a>
+        <a href="/about" className="link about-link" onClick={handleLinkClick}>
           About
-        </Link>
-        <Link
+        </a>
+        <a
           href="/contact"
-          className="contact-link"
+          className="link contact-link"
           onClick={handleLinkClick}
         >
           Contact
-        </Link>
+        </a>
       </div>
     </nav>
   );

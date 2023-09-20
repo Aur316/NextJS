@@ -1,3 +1,9 @@
+import SocialMedia from "./contact/SocialMedia";
+
 export default function Home() {
-  return <>Home page</>;
+  return (
+    <>
+      <SocialMedia></SocialMedia>
+    </>
+  );
 }
