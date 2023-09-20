@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
-import "../../globals.css";
+import "./navbar2.css";
 
-export default function Navbar() {
+export default function Navbar2() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleLinkClick = () => {
