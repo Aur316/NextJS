@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import SocialMedia from "./components/socialMedia/SocialMedia";
+import SocialMedia from "./1_components/socialMedia/SocialMedia";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +18,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <SocialMedia />
         {children}
+        <SocialMedia className="footer" />
       </body>
     </html>
   );

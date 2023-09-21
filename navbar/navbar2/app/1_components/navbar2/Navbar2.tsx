@@ -1,4 +1,7 @@
 "use client";
+
+// in Your real app please use <Link></Link> instead of <a> tag.
+
 import { useState } from "react";
 import "./navbar2.css";
 
@@ -28,6 +31,13 @@ export default function Navbar2() {
           onClick={handleLinkClick}
         >
           Contact
+        </a>
+        <a
+          href="/history"
+          className="link contact-link"
+          onClick={handleLinkClick}
+        >
+          History
         </a>
       </div>
     </nav>
